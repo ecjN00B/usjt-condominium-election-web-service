@@ -4,6 +4,7 @@
   "description": "This is a RESTful Web Service developed for the Condominium Election App",
   "main": "index.js",
   "scripts": {
+    "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "N00B",
