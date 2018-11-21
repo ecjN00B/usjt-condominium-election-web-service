@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 var express = require('express'),
     app = express(),
     port = process.env.PORT || 3000,
@@ -7,7 +9,10 @@ var express = require('express'),
     bodyParser = require('body-parser');
 
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost/votesdb', { useNewUrlParser: true });
+mongoose.connect(`mongodb://${process.env.DB_USER}:${process.env.DB_PASS}@${process.env.DB_URL}`, 
+    {useNewUrlParser: true }, (err) => { 
+        (err) ? console.log(`Some problem with the connection ${err}`) : console.log('The Mongoose connection is ready');
+    });
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
