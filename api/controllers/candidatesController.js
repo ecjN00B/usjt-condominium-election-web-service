@@ -45,9 +45,9 @@ exports.read_a_candidate = function(req, res) {
  };
  
  exports.update_a_candidate = function(req, res) {
-   Candidates.findOne({ "number": req.body.number }, function(err, candidate) {
-      if (candidate)
-         res.sendStatus(409); /** Conflict */
+   Candidates.findOne({ _id: req.params.candidateId }, function(err, candidate) {
+      if (!candidate)
+         res.sendStatus(404); /** Not Found */
       else {
          if (mongoose.Types.ObjectId.isValid(req.params.candidateId)) {        
             Candidates.findOneAndUpdate({ _id: req.params.candidateId }, req.body, {new: true}, function(err, candidate) {
@@ -63,7 +63,7 @@ exports.read_a_candidate = function(req, res) {
  };
  
  exports.delete_a_candidate = function(req, res) {
-   Candidates.findOne({ "number": req.body.number }, function(err, candidate) {
+   Candidates.findOne({ _id: req.params.candidateId }, function(err, candidate) {
       if (!candidate)
          res.sendStatus(404); /** Not Found */
       else {

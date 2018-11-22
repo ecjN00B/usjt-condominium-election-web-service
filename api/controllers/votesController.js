@@ -42,8 +42,8 @@ exports.read_a_vote = function(req, res) {
 
 exports.update_a_vote = function(req, res) {
    Votes.findOne({ 'voterId': req.body.voterId }, function(err, vote) {
-      if (vote)
-         res.sendStatus(409); /** Conflict */
+      if (!vote)
+         res.sendStatus(404); /** Not Found */
       else {
          Votes.findOneAndUpdate({ 'voterId': req.params.voterId }, req.body, {new: true}, function(err, vote) {
             if (err)
