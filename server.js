@@ -16,6 +16,10 @@ mongoose.connect(`mongodb://${process.env.DB_USER}:${process.env.DB_PASS}@${proc
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+app.use(function (req, res, next) {
+    res.setHeader('Access-Control-Allow-Origin', process.env.ORIGIN);
+    next();
+});
 
 var routes = require('./api/routes/routes');
 
