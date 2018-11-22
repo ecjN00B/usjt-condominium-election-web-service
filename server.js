@@ -9,7 +9,7 @@ var express = require('express'),
     bodyParser = require('body-parser');
 
 mongoose.Promise = global.Promise;
-mongoose.connect(`mongodb://${process.env.DB_USER}:${process.env.DB_PASS}@${process.env.DB_URL}`, 
+mongoose.connect(`mongodb://${process.env.DB_USER}:${process.env.DB_PASS}@${process.env.DB_HOST}`, 
     {useNewUrlParser: true }, (err) => { 
         (err) ? console.log(`Some problem with the connection ${err}`) : console.log('The Mongoose connection is ready');
     });

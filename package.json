@@ -1,6 +1,6 @@
 {
   "name": "condominium-election-web-service",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "This is a RESTful Web Service developed for the Condominium Election App",
   "main": "index.js",
   "scripts": {
