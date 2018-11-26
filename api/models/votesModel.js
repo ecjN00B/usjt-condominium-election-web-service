@@ -4,12 +4,6 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var msgSchema = new Schema({
-   voter: {
-      type: String
-   },
-   voterId: {
-      type: String
-   },
    candidate: {
       type: String
    },

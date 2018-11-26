@@ -17,10 +17,5 @@ module.exports = function(app) {
     app.route('/api/candidates')
         .get(candidates.list_all_candidates)
         .post(candidates.create_a_candidate);
-    
-    app.route('/api/candidates/:candidateId')
-        .get(candidates.read_a_candidate)
-        .put(candidates.update_a_candidate)
-        .delete(candidates.delete_a_candidate);
 
 };
