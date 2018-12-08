@@ -14,6 +14,10 @@ Before you can run the application, make sure that you have the following softwa
 
 And add in your root folder .env file. ([See template](docs/.env.template))
 
+## To Do
+
+- [ ] Endpoints Doc
+
 ## Contributing
 
 Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
