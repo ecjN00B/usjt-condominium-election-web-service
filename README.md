@@ -16,7 +16,7 @@ And add in your root folder .env file. ([See template](docs/.env.template))
 
 ## To Do
 
-- [ ] Endpoints Doc
+- [ ] Endpoints Docs
 
 ## Contributing
 
